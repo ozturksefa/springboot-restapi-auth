@@ -22,7 +22,10 @@ public class UserController {
 	@Autowired
 	private UserService service;
 	
-	
+	public UserController(UserService service) {
+		super();
+		this.service = service;
+	}
 	@GetMapping("v1/user")
 	public List<User> list(){
 		return service.listAll();

@@ -1,45 +1,24 @@
 package net.demo;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
+public class UserDto {
 
-@Entity
-@Table(name =  "user", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
-public class User {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
 	private Integer tckn;
 	private String email;
 	private String password;
 	private Integer gsm;
 	private String address;
-
-	public User() {
+	
+	public UserDto() {
+		
 	}
-
-	public User(Integer id, Integer tckn, String email, String password, Integer gsm, String address) {
+	
+	public UserDto(Integer tckn, String email, String password, Integer gsm, String address) {
 		super();
-		this.id = id;
-		this.tckn = tckn;
+		this.tckn=tckn;
 		this.email = email;
 		this.password = password;
-		this.gsm = gsm;
-		this.address = address;
-	}
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
+		this.gsm=gsm;
+		this.address=address;
 	}
 
 	public Integer getTckn() {
@@ -81,5 +60,6 @@ public class User {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-
+	
+	
 }
